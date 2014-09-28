@@ -2,14 +2,32 @@
 html
 	title= 'Node Paper Scissors'
 	link(rel="stylesheet", href="/css/style.css")
-	script(src="/js/bootstrap.js")
+	link(href='http://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
+	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+	script(src="/js/main.js")
 	body
-		h1 Welcome to #{title}
-		form(method='post', action='/play')
-			input(type='radio', name='choice', value='node') 
-			|Node
-			input(type='radio', name='choice', value='paper') 
-			|Paper
-			input(type='radio', name='choice', value='scissors') 
-			|Scissors
+		h1 Welcome to 
+			span.node Node 
+			|Paper Scissors
+		
+		form(method='post', action='/')
+			label
+				input(type='radio', name='choice', value='nodejs') 
+				img(src='/img/nodejs.png', alt='node').choice
+			label
+				input(type='radio', name='choice', value='paper') 
+				img(src='/img/paper.png', alt='paper').choice
+			label
+				input(type='radio', name='choice', value='scissors') 
+				img(src='/img/scissors.png', alt='scissors').choice
 			input(type='submit', value='Play!', class='btn')
+
+		.results
+		if (typeof(userChoice)!== 'undefined' && typeof(computerChoice) !== 'undefined')
+			p.node result
+			img(src='img/' + userChoice + '.png')
+			p vs
+			img(src='img/' + computerChoice + '.png')
+
+
+		

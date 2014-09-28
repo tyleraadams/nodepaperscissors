@@ -2,5 +2,58 @@
 	Just an example, could be an Express-supported stylesheet preprocessor source file (LESS, Stylus, etc.)
 */
 body {
-	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-family: 'Roboto', "MS Trebuchet", sans-serif;
+	text-align: center;
+}
+
+img{
+	width:200px;
+}
+
+.choice {
+	opacity:0.3;
+	width:100px;
+}
+
+input[type='radio']{
+	visibility:hidden;
+	position:absolute;
+}
+
+label > input + .choice{
+  cursor:pointer;
+  border:2px solid transparent;
+  margin-right:30px;
+}
+.choice:hover, label > input:checked + .choice{
+	opacity:1;
+}
+
+input[type='submit']{
+	border:none;
+	color:white;
+	background:navy;
+	border-radius:4px;
+	padding:10px;
+	display:block;
+	margin:20px auto;
+	font-size:1.5em;
+	outline:none;
+}
+
+input[type='submit']:hover{
+	background:pink;
+}
+
+form{
+	margin:20px auto;
+}
+
+.node {
+	color:#8cc84b;
+	font-size:2em;
+}
+
+.results {
+	display:block;
 }
